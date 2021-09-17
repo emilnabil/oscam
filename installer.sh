@@ -13,7 +13,7 @@ OSVERSION='11.696'
 OSPACKAGE='oscam'
 NCVERSION='11690'
 NCPACKAGE='ncam'
-MY_URL='https://raw.githubusercontent.com/emilnabil/oscam/main/'
+MY_URL='https://raw.githubusercontent.com/emilnabil/oscam/main'
 
 ####################
 echo "==============================================================================================================="
@@ -42,6 +42,7 @@ rm -rf $TMPDIR/${NCPACKAGE}_{NCVERSION}_all.ipk MY_EM="=========================
    wait 2;
     sleep 2;
   exit    
+
 
 
 
