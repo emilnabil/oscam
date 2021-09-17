@@ -11,7 +11,7 @@
 TMPDIR='/tmp'
 OSVERSION='11.696'
 OSPACKAGE='oscam'
-NCVERSION='11690'
+NCVERSION='11.90'
 NCPACKAGE='ncam'
 OPKGINSTAL='opkg install --force-overwrite'
 MY_URL='https://raw.githubusercontent.com/emilnabil/oscam/main'
@@ -31,8 +31,6 @@ echo "Insallling Emu Oscam - ncam  Please Wait "
 rm -rf $TMPDIR/${OSPACKAGE}_{OSVERSION}_all.ipk
 echo **********************************************************"
 rm -rf $TMPDIR/${NCPACKAGE}_{NCVERSION}_all.ipk MY_EM="======================================================================================================="
- echo "******************"
- echo $MY_EM
  echo "    UPLOADED BY  >>>>   EMIL_NABIL "   
  echo "
   *****      *   *        *   *
@@ -43,6 +41,8 @@ rm -rf $TMPDIR/${NCPACKAGE}_{NCVERSION}_all.ipk MY_EM="=========================
    wait 2;
     sleep 2;
   exit    
+
+
 
 
 
