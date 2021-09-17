@@ -32,8 +32,6 @@ else
 fi
 
 ##################################
-
-}
 ################
 # Package Checking  #
 if grep -qs "Package: $PACKAGE" $STATUS ; then
@@ -57,13 +55,12 @@ else
     else
         echo ""
         echo ""
-        echo "   >>>>   Feed Missing $PACKAGE   <<<<"
-        echo "   >>>>   Notification Emu will not work without $PACKAGE   <<<<"
         sleep 3
         exit 0
     fi
 
-echo "Insallling Oscam plugin Please Wait ......"
+echo "Insallling Oscam plugin Please Wait "
+   wait 2;
             wget $MY_URL/${PACKAGE}_${VERSION}_all.ipk -qP $TMPDIR
             $OPKGINSTAL $TMPDIR/${PACKAGE}_${VERSION}_all.ipk
         else
@@ -87,6 +84,7 @@ rm -rf $TMPDIR/${PACKAGE}_{VERSION}_all.ipk MY_EM="=============================
    wait 2;
     sleep 2;
   exit    
+
 
 
 
