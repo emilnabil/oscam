@@ -1,6 +1,3 @@
-
-https://raw.githubusercontent.com/emilnabil/oscam/main/installer.sh
-
 #!/bin/sh
 # ###########################################
 # SCRIPT : DOWNLOAD AND INSTALL OSCAM ###
@@ -90,6 +87,7 @@ rm -rf $TMPDIR/${PACKAGE}_{VERSION}_all.ipk MY_EM="=============================
    wait 2;
     sleep 2;
   exit    
+
 
 
 
