@@ -1,9 +1,12 @@
+
+https://raw.githubusercontent.com/emilnabil/oscam/main/installer.sh
+
 #!/bin/sh
 # ###########################################
 # SCRIPT : DOWNLOAD AND INSTALL OSCAM ###
 # ###########################################
 #
-# Command: wget https://raw.githubusercontent.com/MOHAMED19OS/Download/main/Oscam_Ncam/installer.sh -q; sh installer.sh
+# Command: wget https://raw.githubusercontent.com/emilnabil/oscam/main/installer.sh -O - | /bin/sh
 #
 # ###########################################
 ###########################################
@@ -11,7 +14,7 @@
 TMPDIR='/tmp'
 VERSION='11.696'
 PACKAGE='oscam'
-MY_URL='https://raw.githubusercontent.com/MOHAMED19OS/Download/main/Oscam_Ncam/'
+MY_URL='https://raw.githubusercontent.com/emilnabil/oscam/main/'
 
 ####################
 #  Image Checking  #
@@ -87,5 +90,7 @@ rm -rf $TMPDIR/${PACKAGE}_{VERSION}_all.ipk MY_EM="=============================
    wait 2;
     sleep 2;
   exit    
+
+
 
 
