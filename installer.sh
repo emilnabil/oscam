@@ -48,10 +48,10 @@ echo "Insallling Oscam plugin Please Wait "
    wait 2;
 if which dpkg > /dev/null 2>&1; then
 	MY_FILE=$MY_DEB
-	MY_URL=https://raw.githubusercontent.com/emilnabil/oscam/main/$PACKAGE'/'$MY_DEB
+	FULL_MY_URL=https://raw.githubusercontent.com/emilnabil/oscam/main/$PACKAGE'/'$MY_DEB
 else
 	MY_FILE=$MY_IPK
-	MY_URL=https://raw.githubusercontent.com/emilnabil/oscam/main//${PACKAGE}_${VERSION}_all.ipk
+	FULL_MY_URL=https://raw.githubusercontent.com/emilnabil/oscam/main//${PACKAGE}_${VERSION}_all.ipk
 fi
 
             wget $MY_URL/${PACKAGE}_${VERSION}_all.ipk -qP $TMPDIR
@@ -77,6 +77,7 @@ rm -rf $TMPDIR/${PACKAGE}_{VERSION}_all.ipk MY_EM="=============================
    wait 2;
     sleep 2;
   exit    
+
 
 
 
