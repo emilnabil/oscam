@@ -23,20 +23,6 @@ if which opkg > /dev/null 2>&1; then
     OPKGINSTAL='opkg install'
     OPKGREMOV='opkg remove --force-depends'
 else
-    STATUS='/var/lib/dpkg/status'
-    OSTYPE='DreamOS'
-    OPKG='apt-get update'
-    OPKGINSTAL='apt-get install'
-    OPKGREMOV='apt-get purge --auto-remove'
-    DPKINSTALL='dpkg -i --force-overwrite'
-fi
-
-##################################
-################
-# Package Checking  #
-if grep -qs "Package: $PACKAGE" $STATUS ; then
-    echo
-else
     echo "             install $PACKAGE   "
     echo
     if [ $OSTYPE = "Opensource" ]; then
@@ -55,8 +41,7 @@ else
     else
         echo ""
         echo ""
-        sleep 3
-        exit 0
+        sleep 2
     fi
 
 echo "Insallling Oscam plugin Please Wait "
@@ -84,6 +69,7 @@ rm -rf $TMPDIR/${PACKAGE}_{VERSION}_all.ipk MY_EM="=============================
    wait 2;
     sleep 2;
   exit    
+
 
 
 
