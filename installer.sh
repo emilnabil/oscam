@@ -30,7 +30,8 @@ echo "Insallling Emu Oscam - ncam  Please Wait "
     ###########################
 rm -rf $TMPDIR/${OSPACKAGE}_{OSVERSION}_all.ipk
 echo **********************************************************"
-rm -rf $TMPDIR/${NCPACKAGE}_{NCVERSION}_all.ipk MY_EM="======================================================================================================="
+rm -rf $TMPDIR/${NCPACKAGE}_{NCVERSION}_all.ipk 
+echo "======================================================================================================="
  echo "    UPLOADED BY  >>>>   EMIL_NABIL "   
  echo "
   *****      *   *        *   *
@@ -41,6 +42,7 @@ rm -rf $TMPDIR/${NCPACKAGE}_{NCVERSION}_all.ipk MY_EM="=========================
    wait 2;
     sleep 2;
   exit    
+
 
 
 
