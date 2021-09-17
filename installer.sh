@@ -10,6 +10,8 @@
 # My Config #
 TMPDIR='/tmp'
 VERSION='11.696'
+MY_IPK=oscam_11.696_all.ipk
+MY_DEB=oscam_11.696_all.deb
 PACKAGE='oscam'
 MY_URL='https://raw.githubusercontent.com/emilnabil/oscam/main/'
 
@@ -44,6 +46,14 @@ if which opkg > /dev/null 2>&1; then
 
 echo "Insallling Oscam plugin Please Wait "
    wait 2;
+if which dpkg > /dev/null 2>&1; then
+	MY_FILE=$MY_DEB
+	MY_URL=https://raw.githubusercontent.com/emilnabil/oscam/main/$PACKAGE'/'$MY_DEB
+else
+	MY_FILE=$MY_IPK
+	MY_URL=https://raw.githubusercontent.com/emilnabil/oscam/main//${PACKAGE}_${VERSION}_all.ipk
+fi
+
             wget $MY_URL/${PACKAGE}_${VERSION}_all.ipk -qP $TMPDIR
             $OPKGINSTAL $TMPDIR/${PACKAGE}_${VERSION}_all.ipk
         
@@ -67,6 +77,9 @@ rm -rf $TMPDIR/${PACKAGE}_{VERSION}_all.ipk MY_EM="=============================
    wait 2;
     sleep 2;
   exit    
+
+
+
 
 
 
