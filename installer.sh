@@ -22,7 +22,6 @@ if which opkg > /dev/null 2>&1; then
     OPKG='opkg update'
     OPKGINSTAL='opkg install'
     OPKGREMOV='opkg remove --force-depends'
-else
     echo "             install $PACKAGE   "
     echo
     if [ $OSTYPE = "Opensource" ]; then
@@ -38,7 +37,6 @@ else
         echo " Downloading $PACKAGE ......"
         echo
         $OPKGINSTAL $PACKAGE -y
-    else
         echo ""
         echo ""
         sleep 2
@@ -48,11 +46,11 @@ echo "Insallling Oscam plugin Please Wait "
    wait 2;
             wget $MY_URL/${PACKAGE}_${VERSION}_all.ipk -qP $TMPDIR
             $OPKGINSTAL $TMPDIR/${PACKAGE}_${VERSION}_all.ipk
-        else
+        
             echo "Insallling Oscam plugin Please Wait ......"
             wget $MY_URL/${PACKAGE}_${VERSION}_all.deb -qP $TMPDIR
             $DPKINSTALL $TMPDIR/${PACKAGE}_${VERSION}_all.deb; $OPKGINSTAL -f -y
-        fi
+        
     ###########################
 rm -rf $TMPDIR/${PACKAGE}_{VERSION}_all.deb
 echo **********************************************************"
@@ -69,6 +67,7 @@ rm -rf $TMPDIR/${PACKAGE}_{VERSION}_all.ipk MY_EM="=============================
    wait 2;
     sleep 2;
   exit    
+
 
 
 
