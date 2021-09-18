@@ -32,12 +32,12 @@ rm -rf $TMPDIR/${OSPACKAGE}_{OSVERSION}_all.ipk
 echo **********************************************************"
 rm -rf $TMPDIR/${NCPACKAGE}_{NCVERSION}_all.ipk 
 echo "======================================================================================================="
- echo "    UPLOADED BY  >>>>   EMIL_NABIL "   
+ echo "    UPLOADED BY       EMIL_NABIL "   
  echo "
   *****      *   *        *   *
   *         * * * *       *   *
   *****    *   *    *     *   *
-  *.      *           *   *   *
+  *       *           *   *   *
   *****  *             *  *   ****** "
    wait 2;
     sleep 2;
