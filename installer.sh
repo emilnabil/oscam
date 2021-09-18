@@ -28,9 +28,9 @@ echo "Insallling Emu Oscam - ncam  Please Wait "
           $OPKGINSTAL $TMPDIR/${NCPACKAGE}_${NCVERSION}_all.ipk
         
     ###########################
-rm -rf $TMPDIR/${OSPACKAGE}_{OSVERSION}_all.ipk
+rm -f $TMPDIR/${OSPACKAGE}_{OSVERSION}_all.ipk
 echo "**********************************************************"
-rm -rf $TMPDIR/${NCPACKAGE}_{NCVERSION}_all.ipk 
+rm -f $TMPDIR/${NCPACKAGE}_{NCVERSION}_all.ipk 
 echo "======================================================================================================="
  echo "    UPLOADED BY       EMIL_NABIL "   
 
