@@ -40,36 +40,38 @@ opkg remove enigma2-softcams-cccam-all-images
 wait
 opkg remove enigma2-plugin-softcams-ncam
 wait
+apt-get purge --auto-remove enigma2-plugin-softcams-ncam-osdreambox
+wait
 opkg remove --force-depends enigma2-softcams-oscam-all-images
 wait
-clear
 #############################
 echo "Insallling Emu Oscam - ncam  Please Wait "
-   wait 2
+echo "             enigma update " 
+  opkg update
+  opkg install wget
+wait 
 cd /tmp
 set -e
- echo "=============================================="
-wait 
    wget
 "https://raw.githubusercontent.com/emilnabil/oscam/main/ncam_11.90_all.ipk"
- wait 
+ wait 1
   wget
 "https://raw.githubusercontent.com/emilnabil/oscam/main/oscam-revcamV2_11.696_all.ipk"
- wait 
+ wait 1
  wget
 "https://raw.githubusercontent.com/emilnabil/oscam/main/oscam-supcam_11.696_all.ipk"
-  wait 
+  wait 1
  wget
 "https://raw.githubusercontent.com/emilnabil/oscam/main/oscam_11.696_all.ipk"
 wait 2
 cd ..
   opkg install --force-overwrite /tmp/*.ipk
 wait 1
-  
+ 
 echo "======================================================================"
     ###########################
 rm -rf /tmp/*.ipk
-wait 
+wait
 echo "======================================================================================================="
  echo "    UPLOADED BY  >>>>   EMIL_NABIL "   
    echo "
@@ -81,6 +83,7 @@ echo "==========================================================================
    wait 2;
     sleep 2;
   exit    
+
 
 
 
