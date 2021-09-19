@@ -40,8 +40,6 @@ opkg remove enigma2-softcams-cccam-all-images
 wait
 opkg remove enigma2-plugin-softcams-ncam
 wait
-apt-get purge --auto-remove enigma2-plugin-softcams-ncam-osdreambox
-wait
 opkg remove --force-depends enigma2-softcams-oscam-all-images
 wait
 #############################
