@@ -45,36 +45,31 @@ wait
 clear
 #############################
 echo "Insallling Emu Oscam - ncam  Please Wait "
-   wait 2
+   wait 2;
 cd /tmp
 set -e
-            wget "https://raw.githubusercontent.com/emilnabil/oscam/main/ncam_11.90_all.deb"
-wait 1
+ echo "=============================================="
+wait 
    wget
 "https://raw.githubusercontent.com/emilnabil/oscam/main/ncam_11.90_all.ipk"
- wait 1
+ wait 
   wget
 "https://raw.githubusercontent.com/emilnabil/oscam/main/oscam-revcamV2_11.696_all.ipk"
- wait 1
+ wait 
  wget
 "https://raw.githubusercontent.com/emilnabil/oscam/main/oscam-supcam_11.696_all.ipk"
-  wait 1
- wget
-"https://raw.githubusercontent.com/emilnabil/oscam/main/oscam_11.696_all.deb"
- wait 1
+  wait 
  wget
 "https://raw.githubusercontent.com/emilnabil/oscam/main/oscam_11.696_all.ipk"
 wait 2
 cd ..
   opkg install --force-overwrite /tmp/*.ipk
 wait 1
-    apt-get update && dpkg -i --force-overwrite /tmp/*.deb; apt-get install -f -y
+  
 echo "======================================================================"
     ###########################
 rm -rf /tmp/*.ipk
-wait
-rm -rf /tmp/*.deb
-wait 1
+wait 
 echo "======================================================================================================="
  echo "    UPLOADED BY  >>>>   EMIL_NABIL "   
    echo "
