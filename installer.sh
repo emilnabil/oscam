@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # ###########################################
 # SCRIPT :              DOWNLOAD AND INSTALL OSCAM + NCAM ###
 # ###########################################
@@ -42,6 +42,7 @@ opkg remove enigma2-plugin-softcams-ncam
 wait
 opkg remove --force-depends enigma2-softcams-oscam-all-images
 wait
+clear
 #############################
 echo "Insallling Emu Oscam - ncam  Please Wait "
    wait 2
