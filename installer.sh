@@ -45,7 +45,7 @@ wait
 clear
 #############################
 echo "Insallling Emu Oscam - ncam  Please Wait "
-   wait 2;
+   wait 2
 cd /tmp
 set -e
  echo "=============================================="
