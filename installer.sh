@@ -43,9 +43,6 @@ else
 fi
 
 ##################################
-# Remove previous files (if any) #
-rm -rf $TMPDIR/"${PACKAGE:?}"* > /dev/null 2>&1
-
 ######################
 #  Remove Old Emu #
 $OPKGREMOV
