@@ -27,8 +27,6 @@ MY_URL='https://raw.githubusercontent.com/emilnabil/oscam/main/'
 if which opkg > /dev/null 2>&1; then
     STATUS='/var/lib/opkg/status'
     OSTYPE='Opensource'
-    PKGEXP3='exteplayer3'
-    PKGGPLY='gstplayer'
     OPKG='opkg update'
     OPKGINSTAL='opkg install'
     OPKGREMOV='opkg remove --force-depends'
@@ -45,8 +43,7 @@ fi
 ##################################
 ######################
 #  Remove Old Emu #
-$OPKGREMOV
-enigma2-softcams-cccam-all-images
+$OPKGREMOV enigma2-softcams-cccam-all-images
 wait
 $OPKGREMOV enigma2-plugin-softcams-ncam-mips
 wait
@@ -56,74 +53,31 @@ wait
 
 #####################
 # Package Checking  #
-if [ $OSTYPE = "Opensource" ]; then
-    if grep -qs "Package: $PKGEXP3" $STATUS ; then
-        echo "$PKGEXP3 found in device..."
-        sleep 1; clear
-    else
-        echo "Need to install $PKGEXP3"
-        echo
+  if grep -qs "Package: $PACKAGE" $STATUS ; then
+    echo
+else
+    echo "     installing Emu   "
+    echo
+    if [ $OSTYPE = "Opensource" ]; then
         echo "Opkg Update ..."
         $OPKG > /dev/null 2>&1
-        echo " Downloading $PKGEXP3 ......"
         echo
-        $OPKGINSTAL $PKGEXP3
-        sleep 1; clear
-    fi
-    if grep -qs "Package: $PKGGPLY" $STATUS ; then
-        echo "$PKGGPLY found in device..."
-        sleep 1; clear
-    else
-        echo "Need to install $PKGGPLY"
+    echo " Downloading Emu .."
         echo
-        echo "Opkg Update ..."
-        $OPKG > /dev/null 2>&1
-        echo " Downloading $PKGGPLY ......"
-        echo
-        $OPKGINSTAL $PKGGPLY
-        sleep 1; clear
-    fi
-
-elif [ $OSTYPE = "DreamOS" ]; then
-    if grep -qs "Package: $PKGBAPP" $STATUS ; then
-        echo " $PKGBAPP found in device..."
-        sleep 1; clear
-    else
-        echo "Need to install  $PKGBAPP"
-        echo
+        $OPKGINSTAL $PACKAGEOSCAM
+    elif [ $OSTYPE = "DreamOS" ]; then
         echo "APT Update ..."
         $OPKG > /dev/null 2>&1
-        echo " Downloading  $PKGBAPP ......"
+        echo " Downloading $PACKAGE ......"
         echo
-        $OPKGINSTAL  $PKGBAPP -y
-        sleep 1; clear
-    fi
-fi
-
-if [ $OSTYPE = "Opensource" ]; then
-    if grep -qs "Package: $PKGEXP3" $STATUS ; then
-        echo
+        $OPKGINSTAL $PACKAGEOSCAM -y
     else
-        echo "Feed Missing $PKGEXP3"
-        echo "Sorry, the Emu will not be install"
-        exit 1
+        echo ""
+        echo ""
+        echo "   >>>>   Feed Missing $PACKAGEOSCAM   <<<<"
+        echo "   >>>>   Emu will not work without $PACKAGEOSCAM   <<<<"
+        sleep 3
     fi
-    if grep -qs "Package: $PKGGPLY" $STATUS ; then
-        echo
-    else
-        echo "Feed Missing $PKGGPLY"
-        echo "Sorry, the Emu will not be install"
-        exit 1
-    fi
-elif [ $OSTYPE = "DreamOS" ]; then
-    if grep -qs "Package: $PKGBAPP" $STATUS ; then
-        echo
-    else
-        echo "Feed Missing $PKGBAPP"
-        echo "Sorry, the plugin will not be install"
-        exit 1
-    fi
-fi
 ###################
 #             Installing #
 if [ $OSTYPE = "Opensource" ]; then
@@ -168,6 +122,6 @@ echo " UPLOADED BY  >>>> EMIL_NABIL   "
   888888====8===8===8======8===8   
   8========8=========8=====8===8 
   888888==8===========8====8===888888 "
-   wait 2
+   wait 
     sleep 2
   exit    
