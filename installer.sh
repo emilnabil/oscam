@@ -152,9 +152,8 @@ fi
 
 ##################################
 # Remove previous files  #
-rm -rf $TMPDIR/"${PACKAGE:?}"* > /dev/null 2>&1
- rm -rf $TMPDIR/*.ipk
- rm -rf $TMPDIR/*.deb
+ rm -f $TMPDIR/*.ipk
+ rm -f $TMPDIR/*.deb
 sleep 1; 
 clear
 echo ""
