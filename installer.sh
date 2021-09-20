@@ -8,7 +8,7 @@ echo "SCRIPT : DOWNLOAD AND INSTALL ALL EMU ( CCCAM - OSCAM - OSSUPCAM - OS REVC
 # ###########################################
 
 ###########################################
-# Configure where we can find things here #
+# Configuration  My Script #
 TMPDIR='/tmp'
 VERSIONCCCAM='2.3.9'
 VERSIONNCAM='11.90'
