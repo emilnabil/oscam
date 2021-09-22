@@ -34,7 +34,7 @@ echo '**                         STARTED                        **'
 echo '************************************************************'
 #            # WRITE Script By  Biko_73 #                
 # AND MODIFY Script To Work Emu OScam BY    
-  EMIL_NABIL  #
+ #  EMIL_NABIL  #
 echo "************************************************************"
 echo ''
 
