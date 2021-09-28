@@ -1,76 +1,49 @@
 #!/bin/sh
 
-# 
-# SCRIPT : DOWNLOAD AND INSTALL EMU OSCAM #
-# ======================================================================================
-# Command: wget https://raw.githubusercontent.com/emilnabil/oscam/main/installer.sh -O - | /bin/sh #
-# ======================================================================================
+##setup command=wget https://raw.githubusercontent.com/emilnabil/oscam/main/installer.sh -O - | /bin/sh
+#
+echo " download and install oscam emu "
 
-# MY CONFIG SCRIPT #
-###########################################
-PACKAGE_DIR='oscam/main'
+version=11.696
+OPKGINSTALL=opkg install --force-overwrite
+MY_URL="https://raw.githubusercontent.com/emilnabil/oscam/main"
 MY_IPK="oscam_11.696_all.ipk"
 MY_DEB="oscam_11.696_all.deb"
+##############################################################################
+# remove old emu #
+opkg remove enigma2-plugin-softcams-oscam-all-images
 
+#################################################################################
 
-######################################################################################
-# Auto ... Do not change
-######################################################################################
+# Download and install plugin #
 
-# Decide : which package ?
-MY_MAIN_URL="https://raw.githubusercontent.com/emilnabil/"
-if which dpkg > /dev/null 2>&1; then
-	MY_FILE=$MY_DEB
-	MY_URL=$MY_MAIN_URL${PACKAGE_DIR}/${MY_DEB}
-else
-	MY_FILE=$MY_IPK
-	MY_URL=$MY_MAIN_URL${PACKAGE_DIR}/${MY_IPK}
-fi
-MY_TMP_FILE="/tmp/"$MY_FILE
+cd /tmp 
 
-echo ''
-echo '************************************************************'
-echo '**                         STARTED                        **'
-echo '************************************************************'
-#            # WRITE Script By  Biko_73 #                
-# AND  Modify the script to download Emu OScam BY    
- #  EMIL_NABIL  #
-echo "************************************************************"
-echo ''
+set -e
+     wget "$MY_URL/$MY_IPK"
+  wait
+     wget "$MY_URL/$MY_DEB"
 
-# Remove previous file (if any)
-rm -f $MY_TMP_FILE > /dev/null 2>&1
-
-# Download package file
-EM='============================================================='
-echo $EM
-echo 'Downloading '$MY_FILE' ...'
-echo $EM
-echo ''
-wget -T 2 $MY_URL -P "/tmp/"
-
-# Check download
-if [ -f $MY_TMP_FILE ]; then
-	# Install
-	echo ''
-	echo $EM
-	echo 'Installation started'
-	echo $EM
-	echo ''
-	if which dpkg > /dev/null 2>&1; then
-		apt-get install --reinstall $MY_TMP_FILE -y
+ if which dpkg > /dev/null 2>&1; then
+		apt-get install --reinstall oscam_11.696_all.deb -y
 	else
-		opkg install --force-reinstall $MY_TMP_FILE
+		opkg install --force-reinstall oscam_11.696_all.ipk
 	fi
-	MY_RES=$?
-
-	# Res
-	echo ''
-	echo ''
-	if [ $MY_RES -eq 0 ]; then
-		echo "   >>>>   SUCCESSFULLY INSTALLED   <<<<"
-		echo ''
-		echo "   >>>>         RESTARING         <<<<"
+echo "================================="
+set +e
+chmod 755 /usr/bin/oscam-emu
+chmod 755 /usr/bin/OSCam_11.696-r798
+cd ..
+wait
+rm -f /tmp/$MY_IPK
+rm -f /tmp/$MY_DEB
+	if [ $? -eq 0 ]; then
+	echo ">>>>   SUCCESSFULLY INSTALLED <<<<"
+fi
+		echo "********************************************************************************"
+echo "   UPLOADED BY  >>>>   EMIL_NABIL "   
+sleep 4;
+		echo ". >>>>         RESTARING     <<<<"
 		if which systemctl > /dev/null 2>&1; then
 			sleep 2; systemctl restart enigma2
 		else
@@ -82,15 +55,36 @@ if [ -f $MY_TMP_FILE ]; then
 	echo ''
 	echo '**************************************************'
 	echo '**                   FINISHED                   **'
-	echo '**************************************************'
-	echo ''
-echo ""
-   wait 2;   
-	exit 0
-else
-	echo ''
-	echo "Download failed !"
-	exit 1
-fi
+echo "********************************************************************************"
+echo "#########################################################"
+   wait 2;
+    sleep 2;
+  exit    
 
-# 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
