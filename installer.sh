@@ -33,7 +33,7 @@ echo '************************************************************'
 echo '**                         STARTED                        **'
 echo '************************************************************'
 #            # WRITE Script By  Biko_73 #                
-# AND MODIFY Script To Work Emu OScam BY    
+# AND  Modify the script to download Emu OScam BY    
  #  EMIL_NABIL  #
 echo "************************************************************"
 echo ''
