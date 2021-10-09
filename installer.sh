@@ -24,9 +24,9 @@ set -e
      wget "$MY_URL/$MY_DEB"
 
  if which dpkg > /dev/null 2>&1; then
-		apt-get install --reinstall oscam_11.697_all.deb -y
+	dpkg -i --force-overwrite $MY_DEB; apt-get install -f -y
 	else
-		opkg install --force-reinstall oscam_11.697_all.ipk
+		opkg install --force-reinstall $MY_IPK
 	fi
 echo "================================="
 set +e
@@ -43,11 +43,10 @@ echo "   UPLOADED BY  >>>>   EMIL_NABIL "
 sleep 4;
 	echo '========================================================================================================================='
 ###################                                                                                                                  
-echo " PLEASE  RESTART ENIGMA  NOW " 
-echo "*****************************************************************************************************************************"
+echo " PLEASE RESTART YOUR DEVICE NOW " 
+echo "**********************************************************************************"
 wait
 exit 0
-
 
 
 
