@@ -3,11 +3,11 @@
 ##setup command=wget https://raw.githubusercontent.com/emilnabil/oscam/main/installer.sh -O - | /bin/sh
 #
 echo " download and install oscam emu "
-version=11.697
+version=11.698
 OPKGINSTALL=opkg install --force-overwrite
 MY_URL="https://raw.githubusercontent.com/emilnabil/oscam/main"
-MY_IPK="oscam_11.697_all.ipk"
-MY_DEB="oscam_11.697_all.deb"
+MY_IPK="oscam_11.698_all.ipk"
+MY_DEB="oscam_11.698_all.deb"
 ##############################################################################
 # remove old emu #
 opkg remove enigma2-plugin-softcams-oscam-all-images
@@ -19,13 +19,12 @@ opkg remove enigma2-plugin-softcams-oscam-all-images
 cd /tmp 
 
 set -e
-     wget "$MY_URL/$MY_IPK"
-  wait
-     wget "$MY_URL/$MY_DEB"
-
+   
  if which dpkg > /dev/null 2>&1; then
+wget "$MY_URL/$MY_IPK"
 	dpkg -i --force-overwrite $MY_DEB; apt-get install -f -y
 	else
+wget "$MY_URL/$MY_DEB"
 		opkg install --force-reinstall $MY_IPK
 	fi
 echo "================================="
@@ -47,6 +46,8 @@ echo " PLEASE RESTART YOUR DEVICE NOW "
 echo "**********************************************************************************"
 wait
 exit 0
+
+
 
 
 
