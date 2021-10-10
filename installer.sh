@@ -19,12 +19,13 @@ opkg remove enigma2-plugin-softcams-oscam-all-images
 cd /tmp 
 
 set -e
-   
+     wget "$MY_URL/$MY_IPK"
+  wait
+     wget "$MY_URL/$MY_DEB"
+
  if which dpkg > /dev/null 2>&1; then
-wget "$MY_URL/$MY_IPK"
 	dpkg -i --force-overwrite $MY_DEB; apt-get install -f -y
 	else
-wget "$MY_URL/$MY_DEB"
 		opkg install --force-reinstall $MY_IPK
 	fi
 echo "================================="
@@ -46,7 +47,6 @@ echo " PLEASE RESTART YOUR DEVICE NOW "
 echo "**********************************************************************************"
 wait
 exit 0
-
 
 
 
