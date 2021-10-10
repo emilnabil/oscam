@@ -7,7 +7,7 @@ version=11.698
 OPKGINSTALL=opkg install --force-overwrite
 MY_URL="https://raw.githubusercontent.com/emilnabil/oscam/main"
 MY_IPK="oscam_11.698_all.ipk"
-MY_DEB="oscam_11.698_all.deb"
+MY_DEB="oscam-11.698_all.deb"
 ##############################################################################
 # remove old emu #
 opkg remove enigma2-plugin-softcams-oscam-all-images
@@ -47,6 +47,8 @@ echo " PLEASE RESTART YOUR DEVICE NOW "
 echo "**********************************************************************************"
 wait
 exit 0
+
+
 
 
 
