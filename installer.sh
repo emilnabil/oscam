@@ -3,7 +3,7 @@
 ##setup command=wget https://raw.githubusercontent.com/emilnabil/oscam/main/installer.sh -O - | /bin/sh
 #
 echo " download and install oscam emu "
-version=11.698
+version=11.700
 OPKGINSTALL=opkg install --force-overwrite
 MY_URL="https://raw.githubusercontent.com/emilnabil/oscam/main"
 MY_IPK="oscam_11.700_all.ipk"
@@ -47,6 +47,7 @@ echo " PLEASE RESTART YOUR DEVICE NOW "
 echo "**********************************************************************************"
 wait
 exit 0
+
 
 
 
