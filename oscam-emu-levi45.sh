@@ -1,10 +1,10 @@
 #!/bin/sh
 
-##setup command=wget https://raw.githubusercontent.com/emilnabil/oscam/main/oscam-emu-levi45.sh -O - | /bin/sh
+##setup command=wget https://raw.githubusercontent.com/emilnabil/oscam/refs/heads/main/oscam-emu-levi45.sh -O - | /bin/sh
 
 echo "Downloading and installing oscam emu"
 
-MY_URL="https://raw.githubusercontent.com/emilnabil/oscam/main"
+MY_URL="https://raw.githubusercontent.com/emilnabil/oscam/refs/heads/main"
 MY_IPK="enigma2-plugin-softcams-oscam-emu-levi45_all.ipk"
 MY_DEB="enigma2-plugin-softcams-oscam-emu-levi45_all.deb"
 
@@ -56,4 +56,5 @@ sleep 2
 
 killall -9 enigma2
 exit 0
+
 
